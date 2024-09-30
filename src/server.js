@@ -17,7 +17,6 @@ import "./models/participante-model.js";
 
 //importar as rotas
 import palestranteRouter from "./routes/palestrante-router.js";
-import eventoRouter from "./routes/evento-router.js";
 
 const PORT = process.env.PORT || 3333;
 const app = express();
@@ -28,8 +27,8 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());//permite usar informações no formato json
 
 //utilizar rotas
-app.use("/eventos", eventoRouter);
-app.use("/palestrantes", palestranteRouter);
+app.use("/eventos", palestranteRouter);
+// app.use("/palestrantes", palestranteRouter);
 
 app.use((request, response) => {
     response.status(404).json({ message: "Rota não encontrada." });

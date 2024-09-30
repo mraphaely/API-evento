@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { register, listar } from "../controllers/evento-controller.js";
+import { register, listar } from "../controllers/palestrante-controller.js";
 
 const router = Router();
 
-router.post("/eventos/register", register);
-router.get("/eventos/listar", listar);
+router.post("/palestrantes", register);
+router.get("/palestrantes", listar);
 
 export default router;
