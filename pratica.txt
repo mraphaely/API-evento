@@ -18,3 +18,24 @@
         - Dados: `{ "nome": "Nome do Palestrante", "expertise": "Área de Especialização" }`
     - **Rota para listar todos os palestrantes:**
         - GET `/eventos/palestrantes`
+
+
+# **Dia 2: Funcionalidades Avançadas (3,33)**
+
+**Objetivo**: Implementação de funcionalidades complexas, autenticação e gerenciamento de relacionamentos.
+
+1. **Gerenciamento de Eventos:**
+    - **Rota para criar um novo evento:**
+        - POST `/eventos/criar`
+        - Dados: `{ "titulo": "Título do Evento", "data": "2024-08-15", "palestrantesId": [1, 3] }`
+    - **Rota para listar todos os eventos com detalhes dos palestrantes:**
+        - GET `/eventos/agenda`
+2. **Autenticação e Participantes:**
+    - Implementar autenticação básica para proteger rotas de criação e listagem.
+    - **Rota para registrar um novo participante:**
+        - POST `/eventos/participantes/registrar`
+        - Dados: `{ "nome": "Nome do Participante", "email": "email@exemplo.com" }`
+3. **Inscrição de Participantes em Eventos:**
+    - **Rota para inscrever um participante em um evento:**
+        - POST `/eventos/inscrever`
+        - Dados: `{ "participanteId": 2, "eventoId": 1 }`
