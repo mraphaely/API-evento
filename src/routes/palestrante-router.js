@@ -3,7 +3,7 @@ import { register, listar } from "../controllers/palestrante-controller.js";
 
 const router = Router();
 
-router.post("/palestrantes", register);
-router.get("/palestrantes", listar);
+router.post("/registrar", register);
+router.get("/listar", listar);
 
 export default router;

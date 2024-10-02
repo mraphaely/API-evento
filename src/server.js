@@ -14,6 +14,7 @@ import conn from "./config/connDB.js";
 import "./models/evento-model.js";
 import "./models/palestrante-model.js";
 import "./models/participante-model.js";
+import "./models/inscricao-model.js";
 
 //importar as rotas
 import palestranteRouter from "./routes/palestrante-router.js";
@@ -29,7 +30,10 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());//permite usar informações no formato json
 
 //utilizar rotas
-app.use("/eventos", palestranteRouter, eventoRouter, participanteRouter);
+// app.use("/eventos", palestranteRouter, eventoRouter, participanteRouter);
+app.use("/eventos", eventoRouter);
+app.use("/eventos/palestrante", palestranteRouter);
+app.use("/eventos/participantes", participanteRouter);
 // app.use("/palestrantes", palestranteRouter);
 
 app.use((request, response) => {

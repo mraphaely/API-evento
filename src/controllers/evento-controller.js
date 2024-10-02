@@ -41,7 +41,12 @@ export const create = async (request, response) => {
 };
 
 export const getAll = async (request, response) => {
-    const getSQL =   /*sql*/ `SELECT * FROM eventos AND palestranteId`
+    const getSQL =   /*sql*/ `SELECT * FROM eventos, palestrantes.nome 
+          AS palestrante_nome, palestrantes.expertise AS palestrante_expertise
+          FROM eventos LEFT JOIN palestrantes 
+          ON eventos.palestranteId = palestrantes.id 
+          `;
+
     conn.query(getSQL, (err, data) => {
         if (err) {
             console.error(err);
