@@ -15,6 +15,7 @@ import "./models/evento-model.js";
 import "./models/palestrante-model.js";
 import "./models/participante-model.js";
 import "./models/inscricao-model.js";
+import "./models/feedback-participante.js";
 
 //importar as rotas
 import palestranteRouter from "./routes/palestrante-router.js";
@@ -32,8 +33,8 @@ app.use(express.json());//permite usar informações no formato json
 //utilizar rotas
 // app.use("/eventos", palestranteRouter, eventoRouter, participanteRouter);
 app.use("/eventos", eventoRouter);
-app.use("/eventos/palestrante", palestranteRouter);
-app.use("/eventos/participantes", participanteRouter);
+app.use("/eventos", palestranteRouter);
+app.use("/eventos", participanteRouter);
 // app.use("/palestrantes", palestranteRouter);
 
 app.use((request, response) => {
@@ -43,3 +44,4 @@ app.use((request, response) => {
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
+//console.log(PORT)

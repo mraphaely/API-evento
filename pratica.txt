@@ -39,3 +39,30 @@
     - **Rota para inscrever um participante em um evento:**
         - POST `/eventos/inscrever`
         - Dados: `{ "participanteId": 2, "eventoId": 1 }`
+
+
+
+# **Dia 3: Relatórios e Funcionalidades Adicionais (3,33)**
+
+**Objetivo**: Desenvolvimento de funcionalidades avançadas, edição, cancelamento, notificações e listagem dinâmica.
+
+1. **Funcionalidade de Feedback:**  
+    - **Rota para enviar feedback de um evento por um participante:**
+        - POST `/eventos/feedback`
+        - Dados: `{ "participanteId": 2, "eventoId": 1, "nota": 5, "comentario": "Excelente evento!" }`
+2. **Relatórios e Estatísticas:**
+    - **Rota para retornar o evento com mais participantes:**
+        - GET `/eventos/mais-popular`
+    - **Rota para retornar o palestrante com mais participações:**
+        - GET `/eventos/palestrante-mais-ativo`
+3. **Funcionalidades de Edição e Cancelamento:**
+    - **Rota para editar os detalhes de um evento:**
+        - PUT `/eventos/editar`
+        - Dados: `{ "eventoId": 1, "titulo": "Novo Título", "data": "2024-08-20", "palestrantesId": [2] }`
+    - **Rota para cancelar um evento:**
+        - DELETE `/eventos/cancelar`
+        - Dados: `{ "eventoId": 1 }`
+4. **Listagem Avançada:**
+    - **Rota para listar todos os eventos que um participante está inscrito:**
+        - GET /eventos/meus-eventos
+        - Query Parameter: `participanteId`        
